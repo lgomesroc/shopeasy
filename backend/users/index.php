@@ -2,9 +2,7 @@
 
 require 'vendor/autoload.php';
 
-use Flight;
-
-Flight::set('db', new mysqli('localhost', 'luciano', 'senha_segura', 'shopeasy_db'));
+Flight::set('db', new mysqli('shopeasy_mysql', 'lgomesroc', '12345', 'shopeasy_db'));
 
 Flight::route('/', function() {
     echo json_encode(['message' => 'Users service is running']);
@@ -12,7 +10,16 @@ Flight::route('/', function() {
 
 Flight::route('/users', function() {
     $db = Flight::get('db');
+    if ($db->connect_error) {
+        echo json_encode(['error' => 'Database connection failed']);
+        return;
+    }
+
     $result = $db->query("SELECT * FROM users");
+    if (!$result) {
+        echo json_encode(['error' => 'Table users not found']);
+        return;
+    }
 
     $users = [];
     while ($row = $result->fetch_assoc()) {

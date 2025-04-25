@@ -1,3 +1,17 @@
+# Shopeasy - Plataforma Modular de E-commerce
+Shopeasy é uma solução modular e escalável para e-commerce, baseada em microsserviços, garantindo flexibilidade, 
+desempenho e manutenção simplificada. O sistema é dividido em backend e frontend independentes, cada um operando 
+dentro de contêineres Docker, facilitando o desenvolvimento e o deploy.
+
+### Arquitetura do Projeto
+Backend: Desenvolvido em PHP com Flight PHP, organizado em microsserviços (users, products, orders) que se comunicam 
+via API REST e interagem com um banco de dados MySQL.
+
+Frontend: Criado com Angular, também estruturado como microsserviços (core, shared, users, products, orders), 
+garantindo modularidade e reutilização de componentes.
+
+Docker: O sistema roda em contêineres isolados, permitindo fácil escalabilidade e deploy simplificado.
+
 # Shopeasy Backend
 
 Este repositório contém a implementação backend do projeto **Shopeasy**, utilizando **Flight PHP** para criar 

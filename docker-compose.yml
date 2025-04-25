@@ -4,10 +4,10 @@ services:
     container_name: shopeasy_mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 5577azcD@#
       MYSQL_DATABASE: shopeasy_db
-      MYSQL_USER: luciano
-      MYSQL_PASSWORD: senha_segura
+      MYSQL_USER: lgomesroc
+      MYSQL_PASSWORD: 12345
     ports:
       - "3307:3306"
     volumes:
